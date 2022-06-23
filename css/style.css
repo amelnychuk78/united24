@@ -2257,6 +2257,7 @@ video.main {
 @media screen and (max-width: 667px) {
   .sec-bnr__title {
     font-size: 46px;
+    letter-spacing: -2px;
   }
   .sec-bnr__date {
     font-size: 32px;
@@ -2301,7 +2302,7 @@ video.main {
     height: 300px;
   }
   .donate-info__block {
-    max-height: 300px;
+    max-height: 400px;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -webkit-flex-direction: column;
