@@ -109,5 +109,44 @@ jQuery(document).ready(function(){
 	});
 
 
+	var $menu = jQuery("#header-mobile-menu").mmenu({
+		"extensions": [
+		"border-none",
+		"pagedim-black",
+		"fx-menu-slide",
+		"position-right",
+		],
+		"setSelected": {
+			"hover": true,
+			"parent": true
+		},
+		"onClick": {
+			"close": true
+		}
+	});
+	var $icon = jQuery(".header__burger");
+	var API = $menu.data( "mmenu" );
+	var $x_icon = jQuery(".mmenu__close");
+
+	$icon.on( "click", function() {
+		API.open();
+	});
+
+	API.bind( "open:finish", function() {
+		setTimeout(function() {
+			$icon.addClass( "is-active" );
+		}, 100);
+		$x_icon.on( "click", function() {
+			API.close();
+		});
+	});
+	API.bind( "close:finish", function() {
+		setTimeout(function() {
+			$icon.removeClass( "is-active" );
+		}, 100);
+	});
+
+
+
 });
 }( jQuery ) );
